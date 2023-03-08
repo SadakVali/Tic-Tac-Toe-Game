@@ -7,6 +7,7 @@ const numOfWinsO = document.querySelector(".num-of-wins-o");
 const playerO = document.querySelector(".player-o");
 const customStatus = document.querySelector(".current-status");
 
+let numOfClicks = 0;
 let currentPlayer = "";
 let gameStarted = false;
 let gameWon = false;
@@ -24,6 +25,7 @@ const winCases = [
 
 const initializeGame = (nextLevel=false) => {
     gameStarted = false;
+    numOfClicks = 0;
     gameWon = false;
     gameGrid = ["", "", "", "", "", "", "", "", ""];
     allBoxes.forEach((box, index) => {
@@ -103,10 +105,19 @@ const handleWinCase = () => {
             }, 2000)
         }
     });
+    if (numOfClicks === 9) {
+        customStatus.textContent = `Match Draw`;
+        console.log("Entered... Sadak")
+        setTimeout(() => {
+            initializeGame(true);
+        }, 2000)
+    }
 };
 
 const handleClick = (index) => {
     if (currentPlayer !== "") {
+        numOfClicks += 1; 
+        console.log(numOfClicks);
         gameStarted = true;
         allBoxes[index].textContent = currentPlayer;
         allBoxes[index].style.pointerEvents = "none";
