@@ -1,0 +1,122 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: #009965;
+    padding: 1rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-card {
+    padding: 3rem 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 1rem white;
+    width: clamp(20rem, 20vw + 1rem, 30rem);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    background-color: #23FFB5;
+}
+
+.display-turn {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.player-x, .player-o {
+    font-size: 1.25rem;
+    font-weight: 900; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.player-o > *, .player-x > * {
+    color: black;
+}
+
+.current-status {
+    font-size: 1.5rem;
+    font-weight: 900; 
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.active {
+    border: 0.25rem solid #006B47;
+    border-radius: 0.5rem;
+    scale: 0.8;
+}
+
+.game-screen {
+    display: grid;
+    grid-template-columns: repeat(3, 0.25fr);
+    justify-content: center;
+}
+
+.box {
+    font-size: 2rem;
+    font-weight: 900; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.box1, .box4, .box7, .box2, .box5, .box8 {
+    border-right: 0.25rem solid white;
+}
+
+.box4, .box5, .box6, .box7, .box8, .box9 {
+    border-top: 0.25rem solid white;
+}
+
+.restart-game {
+    padding: 1rem 2rem;
+    margin: auto;
+    width: fit-content;
+    border-radius: 1rem;
+    background-color: transparent;
+    border: 0.125rem solid white;
+    cursor: pointer;
+    transition: all 100ms ease;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 900; 
+    background-color: #00C684;
+}
+
+.restart-game:active, .player-x:active, .player-o:active {
+    scale: 0.95;
+    border-color: #009965;
+}
+
+.make-bgc-green {
+    background-color: #009965;
+}
+
+
