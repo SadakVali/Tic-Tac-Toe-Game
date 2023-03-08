@@ -35,7 +35,7 @@ const initializeGame = (nextLevel=false) => {
     if (nextLevel)
         customStatus.textContent = `player ${currentPlayer} turn`;
     else {
-        customStatus.textContent = "Start the game or Choose the player";
+        customStatus.textContent = "Choose the player";
         playerX.classList = "player-x";
         playerO.classList = "player-o";
         currentPlayer = "";
